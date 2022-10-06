@@ -14,16 +14,14 @@ public class CompradorMacas extends Thread {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                int dado = aleatorio.nextInt(50);
-                buffer.retira_macas(dado);
-                int tempo = aleatorio.nextInt(1000);
-                Thread.sleep(tempo);
-                
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            int dado = aleatorio.nextInt(50);
+            buffer.retira_macas(dado);
+            int tempo = aleatorio.nextInt(1000);
+            Thread.sleep(tempo);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

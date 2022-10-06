@@ -15,16 +15,14 @@ public class CompradorBananas extends Thread {
     @Override
     public void run() {
 
-        while (true) {
-            try {
-                int dado = aleatorio.nextInt(50);
-                buffer.retira_bananas(dado);
-                int tempo = aleatorio.nextInt(1000);
-                Thread.sleep(tempo);
-                
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            int dado = aleatorio.nextInt(50);
+            buffer.retira_bananas(dado);
+            int tempo = aleatorio.nextInt(1000);
+            Thread.sleep(tempo);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

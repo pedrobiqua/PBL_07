@@ -31,12 +31,12 @@ public class Ceasa {
 		System.out.println( "Fornece bananas: " + dado + "[" + countBananas + "]" );
 		notifyAll();
 		*/
-		
+
 		while ( countBananas == NB ) wait();
 		bufferBananas[rearBananas] = dado;
 		rearBananas = (rearBananas + 1) % NB;
 		countBananas = countBananas + dado;
-		System.out.println( "Fornece bananas: " + dado + "[" + countBananas + "]" );
+		System.out.println( "Fornece bananas: " + dado + " / Em estoque = [" + countBananas + "]" );
 		notifyAll();
 
 
@@ -55,7 +55,7 @@ public class Ceasa {
 		while ( countBananas <= numeroDeFrutas) wait();
 		frontBananas = (frontBananas + 1) % NB;
 		countBananas = countBananas - numeroDeFrutas;
-		System.out.println( "Comprando bananas: " + numeroDeFrutas + "[" + countBananas + "]" );
+		System.out.println( "Comprando bananas: " + numeroDeFrutas + " / Em estoque = [" + countBananas + "]" );
 		notifyAll();
 
 		
@@ -74,8 +74,8 @@ public class Ceasa {
 		while ( countApple == NA ) wait();
 		bufferApple[rearApple] = dado;
 		rearApple = (rearApple + 1) % NA;
-		countApple++;
-		System.out.println( "Fornece macas: " + dado + "[" + countApple + "]" );
+		countApple = countApple + dado;
+		System.out.println( "Fornece macas: " + dado + " / Em estoque = [" + countApple + "]" );
 		notifyAll();
         
     }
@@ -93,7 +93,7 @@ public class Ceasa {
 		while ( countApple <= numeroDeFrutas) wait();
 		frontApple = (frontApple + 1) % NA;
 		countApple = countApple - numeroDeFrutas;
-		System.out.println( "Comprando bananas: " + numeroDeFrutas + "[" + countApple + "]" );
+		System.out.println( "Comprando macas: " + numeroDeFrutas + " / Em estoque = [" + countApple + "]" );
 		notifyAll();
     }
 }

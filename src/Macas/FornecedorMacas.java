@@ -16,16 +16,13 @@ public class FornecedorMacas extends Thread {
 
     @Override
     public void run() {
-        while (true)
-		{
-			try {
-				int dado = aleatorio.nextInt(10);
-				buffer.insere_macas( dado );
-				int tempo = aleatorio.nextInt(500);
-				Thread.sleep(tempo);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}	
+		try {
+			int dado = aleatorio.nextInt(10);
+			buffer.insere_macas( dado );
+			int tempo = aleatorio.nextInt(500);
+			Thread.sleep(tempo);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
     }
     
