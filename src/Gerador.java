@@ -38,7 +38,6 @@ public class Gerador extends Thread {
      * Gera threads aleatórias.
      */
     public void GeraThreadsCeasa() {
-        Random aleatorio = new Random();
         int opcoes = aleatorio.nextInt(3);
 
         if (opcoes == 0) {
